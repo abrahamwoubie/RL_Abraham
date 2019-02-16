@@ -70,6 +70,6 @@ class Environment_Image(object):
 
     def Observation(self):
         pixel_data=(self.game.get_state().screen_buffer)
-        return pixel_data[:,:,1]
+        return pixel_data
     def MapActions(self, action_raw):
         return action_raw

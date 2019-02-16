@@ -60,7 +60,7 @@ model_name = model_path + "model"
 def Preprocess(img):
      img = img[0].astype(np.float32) / 255.0
      img = skimage.transform.resize(img, resolution)
-     img = img.astype(np.float32)
+     #img = img.astype(np.float32)
      return img
 
 def Display_Training(iteration, how_many_times, train_scores):

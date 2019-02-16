@@ -52,12 +52,12 @@ from Environment import Environment
 
 
 resolution = (1,100) + (parameter.channels_audio,)
-Feature='Images'
+Feature='Samples'
 
-model_path = Working_Directory + "/Trained_Model_Paper/"+Feature+'_'+str(parameter.how_many_times)+"/"
+model_path = Working_Directory +  'model_' +Feature+'_'+str(parameter.how_many_times)+"/"
 
 MakeDir(model_path)
-model_name = model_path + "model"
+model_name = model_path + "dqn"
 #
 def Preprocess(img):
      #img = img[0].astype(np.float32) / 255.0
@@ -76,8 +76,8 @@ def Display_Training(iteration, how_many_times, train_scores):
         std_training_scores = train_scores.std()
         min_training_scores = train_scores.min()
         max_training_scores = train_scores.max()
-    print("Steps: {}/{} Episodes: {} Rewards: mean: {:.2f}, std: {:.2f}, min: {:.2f}, max: {:.2f}"
-        .format(iteration, how_many_times, len(train_scores), mean_training_scores, std_training_scores,
+    print("Step: {}, {}/{} Episodes: {} Rewards: mean: {:.2f}, std: {:.2f}, min: {:.2f}, max: {:.2f}"
+        .format(round((iteration/parameter.save_each),2),iteration, how_many_times, len(train_scores), mean_training_scores, std_training_scores,
          min_training_scores, max_training_scores),file=sys.stderr)
     mean_training_scores=round(mean_training_scores,2)
     mean_scores.append(mean_training_scores)
@@ -214,7 +214,7 @@ class Train(object):
         if not isterminal:
                 self.prev_reward=self.reward
                 if self.reward==1:
-                	self.reward=0
+                    self.reward=0
         else:
                 if self.reward==1 or self.prev_reward==1:
                         self.reward=1
@@ -231,7 +231,7 @@ class Train(object):
                 train_scores.append(self.reward)
                 env.Reset()
             if (iteration % parameter.save_each == 0):
-                model_name_curr = model_name #+ "_{:04}".format(int(iteration / save_each))
+                model_name_curr = model_name + "_{:04}".format(int(iteration / parameter.save_each))
                 self.saver.save(self.session, model_name_curr)
                 Display_Training(iteration,parameter.how_many_times, train_scores)
                 train_scores = []

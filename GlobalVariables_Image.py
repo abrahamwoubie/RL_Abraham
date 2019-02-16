@@ -9,8 +9,8 @@ class GlobalVariables_Image :
     Learning_Rate = 0.00025
     Discount_Factor = 0.99
 
-    frame_repeat = 8
-    channels = 1
+    frame_repeat = 10
+    channels = 3
 
     channels_audio = 1
 
@@ -19,4 +19,3 @@ class GlobalVariables_Image :
     eps_decay_iter = 0.33 * how_many_times
 
     save_each = 4000
-
