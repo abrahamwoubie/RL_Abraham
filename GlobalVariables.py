@@ -1,4 +1,4 @@
-class GlobalVariables :
+class GlobalVariables:
 
     #parameters
     how_many_times_training=3
@@ -9,7 +9,7 @@ class GlobalVariables :
     Learning_Rate = 0.00025
     Discount_Factor = 0.99
 
-    frame_repeat = 4
+    frame_repeat = 8
     channels = 1
 
     channels_audio = 1

@@ -52,7 +52,7 @@ from Environment import Environment
 
 
 resolution = (1,100) + (parameter.channels_audio,)
-Feature='Samples'
+Feature='Images'
 
 model_path = Working_Directory + "/Trained_Model_Paper/"+Feature+'_'+str(parameter.how_many_times)+"/"
 
