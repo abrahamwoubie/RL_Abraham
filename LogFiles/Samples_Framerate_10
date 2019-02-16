@@ -1,0 +1,46 @@
+Initializing the doom.
+Doom is initialized.
+2019-02-04 19:13:22.535931: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1432] Found device 0 with properties: 
+name: GeForce RTX 2080 Ti major: 7 minor: 5 memoryClockRate(GHz): 1.545
+pciBusID: 0000:04:00.0
+totalMemory: 10.73GiB freeMemory: 10.30GiB
+2019-02-04 19:13:22.535977: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1511] Adding visible gpu devices: 0
+2019-02-04 19:13:22.897739: I tensorflow/core/common_runtime/gpu/gpu_device.cc:982] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-02-04 19:13:22.897789: I tensorflow/core/common_runtime/gpu/gpu_device.cc:988]      0 
+2019-02-04 19:13:22.897796: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 0:   N 
+2019-02-04 19:13:22.898043: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 9942 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2080 Ti, pci bus id: 0000:04:00.0, compute capability: 7.5)
+Training 1
+Steps: 2000/2000000 Episodes: 13 Rewards: mean: 0.38, std: 0.49, min: 0.00, max: 1.00
+Steps: 4000/2000000 Episodes: 15 Rewards: mean: 0.67, std: 0.47, min: 0.00, max: 1.00
+Steps: 6000/2000000 Episodes: 21 Rewards: mean: 0.76, std: 0.43, min: 0.00, max: 1.00
+Steps: 8000/2000000 Episodes: 11 Rewards: mean: 0.45, std: 0.50, min: 0.00, max: 1.00
+Steps: 10000/2000000 Episodes: 13 Rewards: mean: 0.54, std: 0.50, min: 0.00, max: 1.00
+Steps: 12000/2000000 Episodes: 12 Rewards: mean: 0.42, std: 0.49, min: 0.00, max: 1.00
+Steps: 14000/2000000 Episodes: 14 Rewards: mean: 0.57, std: 0.49, min: 0.00, max: 1.00
+Steps: 16000/2000000 Episodes: 12 Rewards: mean: 0.33, std: 0.47, min: 0.00, max: 1.00
+Steps: 18000/2000000 Episodes: 19 Rewards: mean: 0.74, std: 0.44, min: 0.00, max: 1.00
+Steps: 20000/2000000 Episodes: 17 Rewards: mean: 0.76, std: 0.42, min: 0.00, max: 1.00
+Steps: 22000/2000000 Episodes: 19 Rewards: mean: 0.79, std: 0.41, min: 0.00, max: 1.00
+Steps: 24000/2000000 Episodes: 16 Rewards: mean: 0.69, std: 0.46, min: 0.00, max: 1.00
+Steps: 26000/2000000 Episodes: 12 Rewards: mean: 0.50, std: 0.50, min: 0.00, max: 1.00
+Steps: 28000/2000000 Episodes: 18 Rewards: mean: 0.72, std: 0.45, min: 0.00, max: 1.00
+Steps: 30000/2000000 Episodes: 17 Rewards: mean: 0.65, std: 0.48, min: 0.00, max: 1.00
+Steps: 32000/2000000 Episodes: 15 Rewards: mean: 0.53, std: 0.50, min: 0.00, max: 1.00
+Steps: 34000/2000000 Episodes: 11 Rewards: mean: 0.36, std: 0.48, min: 0.00, max: 1.00
+Steps: 36000/2000000 Episodes: 16 Rewards: mean: 0.56, std: 0.50, min: 0.00, max: 1.00
+Steps: 38000/2000000 Episodes: 12 Rewards: mean: 0.42, std: 0.49, min: 0.00, max: 1.00
+Steps: 40000/2000000 Episodes: 16 Rewards: mean: 0.69, std: 0.46, min: 0.00, max: 1.00
+Steps: 42000/2000000 Episodes: 17 Rewards: mean: 0.88, std: 0.32, min: 0.00, max: 1.00
+Steps: 44000/2000000 Episodes: 17 Rewards: mean: 0.65, std: 0.48, min: 0.00, max: 1.00
+Steps: 46000/2000000 Episodes: 20 Rewards: mean: 0.70, std: 0.46, min: 0.00, max: 1.00
+Steps: 48000/2000000 Episodes: 14 Rewards: mean: 0.50, std: 0.50, min: 0.00, max: 1.00
+Traceback (most recent call last):
+  File "Run.py", line 329, in <module>
+    agent.Train()
+  File "Run.py", line 240, in Train
+    self.perform_learning_step(iteration)
+  File "Run.py", line 227, in perform_learning_step
+    reward = env.Make_Action(best_action, parameter.frame_repeat)
+  File "/home/woubie/RL_ViZDoom/Environment.py", line 67, in Make_Action
+    return self.game.make_action(self.actions[action], frame_repeat)
+vizdoom.vizdoom.SignalException: Signal SIGTERM received. ViZDoom instance has been closed.
